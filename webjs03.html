@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar JS</title>
+    <script>
+        let buah = ["Mangga", "Apel", "Pisang"];
+        buah.push("jeruk");
+        console.log("buah index ke -1 " + buah[1]);
+        for(let i = 0 ; i < buah.length; i++) {
+            console.log("buah index ke - " + i + "adalah" + buah[i]);
+        }
+        function isidata() {
+            let selectbuah = document.getElementById("buah");
+            for(let i = 0 ; i < buah.length; i++) {
+                let optionbaru = document.createElement("option");
+                optionbaru.value = buah[i];
+                optionbaru.innerHTML
+                selectbuah.appendChild(optionbaru);
+            }
+        }
+        function pilih() {
+            let selectbuah = document.getElementById
+        }
+    </script>
+</head>
+<body>
+    <form action="">
+        Pilih Buah Favorit Anda:
+        <select name="buah" id="buah" onchange="pilih()">
+            <option value="Durian">Durian</option>
+        </select>
+    </form>
+</body>
+</html>
