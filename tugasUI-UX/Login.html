@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<style>
+    /* body full height, tengahkan box */
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center; /* horizontal */
+        align-items: center;     /* vertical */
+        background: #f2f2f2;
+    }
+
+    /* kotak login */
+    .box {
+        width: 400px; /* bisa diubah */
+        padding: 30px;
+        background: white;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    /* judul */
+    .box h2 {
+        margin-bottom: 20px;
+    }
+
+    /* label */
+    label {
+        display: block;
+        text-align: left;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    /* input */
+    input[type="text"],
+    input[type="password"] {
+        width: 380px; /* lebar mengikuti box */
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    /* tombol */
+    button {
+        width: 100%; /* tombol full width */
+        padding: 12px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+</style>
+</head>
+<body>
+<div class="box">
+    <h2>Silakan Login</h2>
+
+    <form onsubmit="return login()">
+        <label>Username :</label>
+        <input type="text" id="username" placeholder="Masukkan username">
+
+        <label>Password :</label>
+        <input type="password" id="password" placeholder="Masukkan password">
+
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+<script src="logic.js"></script>
+</body>
+</html>
