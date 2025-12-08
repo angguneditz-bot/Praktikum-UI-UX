@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAAStore | Kaos Web Developer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
+      <div class="flex items-center space-x-3">
+        <div class="bg-indigo-600 text-white px-3 py-2 font-bold rounded-lg">SAA</div>
+        <nav class="hidden md:flex space-x-4 text-sm">
+          <a href="#" class="hover:text-indigo-600">Fashion Pria</a>
+          <a href="#" class="hover:text-indigo-600">Fashion Wanita</a>
+          <a href="#" class="hover:text-indigo-600">Aksesoris</a>
+        </nav>
+      </div>
+      <div class="flex items-center space-x-4">
+        <input type="text" placeholder="Cari produk..." class="border rounded-lg px-3 py-1 text-sm">
+        <button id="cartBtn" class="relative">
+          🛒
+          <span id="cartCount" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-1">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-6xl mx-auto text-sm text-gray-500 mt-4 px-4">
+    Home / Fashion Pria / <span class="text-gray-700 font-semibold">Kaos Web Developer</span>
+  </div>
+
+  <!-- Product Section -->
+  <main class="max-w-6xl mx-auto mt-6 p-4 grid md:grid-cols-2 gap-8 bg-white rounded-2xl shadow-lg">
+    <!-- Image Gallery -->
+    <div>
+      <img id="mainImage" 
+           src="https://images.unsplash.com/photo-1555685812-4b943f1cb0eb?w=800" 
+           alt="Kaos Hitam Web Developer" 
+           class="rounded-xl border shadow-sm">
+
+      <div class="flex space-x-2 mt-3">
+        <img src="https://images.unsplash.com/photo-1555685812-4b943f1cb0eb?w=200" 
+             data-color="Hitam"
+             class="thumb w-20 h-20 object-cover rounded-lg border cursor-pointer ring-2 ring-indigo-600" 
+             alt="Kaos Hitam">
+        <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3a1f?w=200" 
+             data-color="Putih"
+             class="thumb w-20 h-20 object-cover rounded-lg border cursor-pointer" 
+             alt="Kaos Putih">
+        <img src="https://images.unsplash.com/photo-1592878849126-9d64a9a9a6b3?w=200" 
+             data-color="Navy"
+             class="thumb w-20 h-20 object-cover rounded-lg border cursor-pointer" 
+             alt="Kaos Navy">
+        <img src="https://images.unsplash.com/photo-1618354691373-d851c5c4e7f3?w=200" 
+             data-color="Army"
+             class="thumb w-20 h-20 object-cover rounded-lg border cursor-pointer" 
+             alt="Kaos Army">
+      </div>
+    </div>
+
+    <!-- Product Info -->
+    <div>
+      <h1 class="text-3xl font-bold mb-2 text-indigo-700">Kaos Web Developer</h1>
+      <p class="text-2xl text-indigo-600 font-semibold mb-2">Rp. 89.000</p>
+      <p class="text-yellow-500 text-sm mb-4">★★★★★ (12 ulasan)</p>
+
+      <div class="mb-4">
+        <h2 class="font-semibold mb-2">Pilih Warna:</h2>
+        <div id="colorOptions" class="flex space-x-3">
+          <button data-color="Hitam" class="color-btn w-10 h-10 rounded-md bg-black border-2 border-indigo-600"></button>
+          <button data-color="Putih" class="color-btn w-10 h-10 rounded-md bg-white border"></button>
+          <button data-color="Navy" class="color-btn w-10 h-10 rounded-md bg-blue-900 border"></button>
+          <button data-color="Army" class="color-btn w-10 h-10 rounded-md bg-green-700 border"></button>
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <h2 class="font-semibold mb-2">Pilih Ukuran:</h2>
+        <div id="sizeOptions" class="flex space-x-3">
+          <button data-size="M" class="size-btn border rounded-md px-4 py-1">M</button>
+          <button data-size="L" class="size-btn border rounded-md px-4 py-1">L</button>
+          <button data-size="XL" class="size-btn border rounded-md px-4 py-1">XL</button>
+          <button data-size="XXL" class="size-btn border rounded-md px-4 py-1">XXL</button>
+        </div>
+      </div>
+
+      <button id="addToCart" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-2 rounded-lg shadow">
+        Tambah ke Keranjang
+      </button>
+
+      <div class="mt-6 border-t pt-4">
+        <h3 class="font-semibold mb-2">Deskripsi Produk</h3>
+        <p class="text-sm text-gray-700 leading-relaxed">
+          Kaos Web Developer dari <strong>SAAStore</strong> berbahan katun combed 30s premium yang nyaman dan adem.
+          Desain minimalis dengan sablon halus yang tahan lama.  
+          Tersedia dalam 4 warna: <b>Hitam, Putih, Navy,</b> dan <b>Army</b>.  
+          Cocok untuk programmer, desainer, dan pecinta dunia teknologi!
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Cart Modal -->
+  <div id="cartModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">
+    <div class="bg-white rounded-lg p-6 w-80">
+      <h2 class="text-lg font-bold mb-3">🛒 Keranjang Belanja</h2>
+      <div id="cartItems" class="text-sm mb-3 text-gray-700"></div>
+      <p id="cartTotal" class="font-semibold text-right mb-4"></p>
+      <div class="flex justify-end space-x-2">
+        <button id="closeCart" class="border px-4 py-1 rounded-lg">Tutup</button>
+        <button class="bg-indigo-600 text-white px-4 py-1 rounded-lg hover:bg-indigo-700">Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    // Gambar berdasarkan warna
+    const imageByColor = {
+      "Hitam": "https://images.unsplash.com/photo-1555685812-4b943f1cb0eb?w=800",
+      "Putih": "https://images.unsplash.com/photo-1602810318383-e386cc2a3a1f?w=800",
+      "Navy": "https://images.unsplash.com/photo-1592878849126-9d64a9a9a6b3?w=800",
+      "Army": "https://images.unsplash.com/photo-1618354691373-d851c5c4e7f3?w=800"
+    };
+
+    const mainImage = document.getElementById('mainImage');
+    const thumbs = document.querySelectorAll('.thumb');
+    const colorBtns = document.querySelectorAll('.color-btn');
+    const sizeBtns = document.querySelectorAll('.size-btn');
+    const addToCartBtn = document.getElementById('addToCart');
+    const cartBtn = document.getElementById('cartBtn');
+    const cartModal = document.getElementById('cartModal');
+    const closeCart = document.getElementById('closeCart');
+    const cartItems = document.getElementById('cartItems');
+    const cartTotal = document.getElementById('cartTotal');
+    const cartCount = document.getElementById('cartCount');
+
+    let selectedColor = "Hitam";
+    let selectedSize = "M";
+    let cart = [];
+
+    // Thumbnail klik
+    thumbs.forEach(img => {
+      img.addEventListener('click', () => {
+        thumbs.forEach(t => t.classList.remove('ring-2', 'ring-indigo-600'));
+        img.classList.add('ring-2', 'ring-indigo-600');
+        selectedColor = img.dataset.color;
+        mainImage.src = imageByColor[selectedColor];
+      });
+    });
+
+    // Pilih warna
+    colorBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        colorBtns.forEach(b => b.classList.remove('border-indigo-600'));
+        btn.classList.add('border-indigo-600');
+        selectedColor = btn.dataset.color;
+        mainImage.src = imageByColor[selectedColor];
+      });
+    });
+
+    // Pilih ukuran
+    sizeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        sizeBtns.forEach(b => b.classList.remove('bg-indigo-600', 'text-white'));
+        btn.classList.add('bg-indigo-600', 'text-white');
+        selectedSize = btn.dataset.size;
+      });
+    });
+
+    // Update keranjang
+    function updateCart() {
+      cartItems.innerHTML = '';
+      let total = 0;
+      cart.forEach(item => {
+        total += item.harga;
+        cartItems.innerHTML += `<p>${item.nama} (${item.warna}, ${item.ukuran}) - Rp. ${item.harga.toLocaleString()}</p>`;
+      });
+      cartTotal.textContent = `Total: Rp. ${total.toLocaleString()}`;
+      cartCount.textContent = cart.length;
+    }
+
+    addToCartBtn.addEventListener('click', () => {
+      cart.push({
+        nama: 'Kaos Web Developer',
+        warna: selectedColor,
+        ukuran: selectedSize,
+        harga: 89000
+      });
+      updateCart();
+      alert(`✅ Kaos warna ${selectedColor} ukuran ${selectedSize} berhasil ditambahkan ke keranjang!`);
+    });
+
+    cartBtn.addEventListener('click', () => {
+      cartModal.classList.remove('hidden');
+      cartModal.classList.add('flex');
+      updateCart();
+    });
+
+    closeCart.addEventListener('click', () => {
+      cartModal.classList.add('hidden');
+      cartModal.classList.remove('flex');
+    });
+  </script>
+
+  <!-- Footer -->
+  <footer class="text-center text-sm text-gray-500 mt-10 py-6 border-t">
+    © 2025 <span class="font-semibold text-indigo-600">SAAStore</span>. Semua hak dilindungi.
+  </footer>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menghitung Luas & Keliling Lingkaran</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        input { padding: 6px; }
+        button { padding: 6px 10px; }
+    </style>
+</head>
+<body>
+
+    <h2>Menghitung Luas dan Keliling Lingkaran</h2>
+
+    <label>Jari-jari (r): </label>
+    <input type="number" id="r" placeholder="Masukkan jari-jari"><br><br>
+
+    <button onclick="hitung()">Hitung</button>
+
+    <h3>Hasil:</h3>
+    <p id="luas">Luas: -</p>
+    <p id="keliling">Keliling: -</p>
+
+    <script>
+        function hitung() {
+            let r = parseFloat(document.getElementById("r").value);
+
+            // Jika input kosong atau bukan angka
+            if (isNaN(r) || r < 0) {
+                alert("Masukkan jari-jari yang benar!");
+                return;
+            }
+
+            let luas = Math.PI * r * r;
+            let keliling = 2 * Math.PI * r;
+
+            document.getElementById("luas").innerHTML = "Luas: " + luas.toFixed(2);
+            document.getElementById("keliling").innerHTML = "Keliling: " + keliling.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>

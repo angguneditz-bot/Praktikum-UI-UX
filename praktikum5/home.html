@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contoh Frameset Layout</title>
+</head>
+
+<!-- Gunakan frameset untuk mengganti <body> -->
+<frameset rows="20%, *, 10%">
+    
+    <!-- Baris pertama (atas): header -->
+    <frame src="header.html">
+
+    <!-- Baris kedua (tengah): dibagi dua kolom -->
+    <frameset cols="20%, *">
+        <!-- Kolom kiri: menu -->
+        <frame src="menu.html">
+
+        <!-- Kolom kanan: halaman utama -->
+        <frame src="praktikum2a.html" name="showframe">
+    </frameset>
+
+    <!-- Baris ketiga (bawah): footer -->
+    <frame src="footer.html">
+
+</frameset>
+
+</html>
